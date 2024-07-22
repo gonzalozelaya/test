@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "my_module",
+    'name': "Modulo Test",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,9 +10,14 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "AAAAAAAAAA",
     'website': "http://www.yourcompany.com",
-
+    "license": "AGPL-3",
+    'installable': True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
+    },
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
