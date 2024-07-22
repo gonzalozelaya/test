@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api, ValidationError
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError, UserError
 
 class MassPayment(models.Model):
     _name = 'mass.payment'
