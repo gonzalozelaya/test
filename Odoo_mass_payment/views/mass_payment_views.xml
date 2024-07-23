@@ -20,7 +20,7 @@
                             <tree>
                                 <field name="partner_id"/>
                                 <field name="amount"/>
-                                <field name="payment_date"/>
+                                <field name="date"/>
                                 <field name="journal_id"/>
                             </tree>
                         </field>
