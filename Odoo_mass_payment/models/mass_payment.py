@@ -14,7 +14,7 @@ class MassPayment(models.Model):
     journal_id = fields.Many2one('account.journal', string='Journal', required=True)
     payment_type = fields.Selection([('outbound', 'Send Money'), ('inbound', 'Receive Money')], string='Payment Type', required=True)
     payment_ids = fields.One2many('account.payment', 'mass_payment_id', string='Payments')
-    invoice_ids = fields.Many2many('account.move', string='Invoices', domain=[('move_type', 'in', ['out_invoice', 'in_invoice']), ('state', '=', 'posted'), ('invoice_payment_state', '!=', 'paid')])
+    invoice_ids = fields.Many2many('account.move', string='Invoices', domain=[('move_type', 'in', ['out_invoice', 'in_invoice']), ('state', '=', 'posted'), ('payment_state', '!=', 'paid')])
 
     def action_open_payment_wizard(self):
         self.ensure_one()
