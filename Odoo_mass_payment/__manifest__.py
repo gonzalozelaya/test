@@ -1,6 +1,6 @@
 {
     'name': 'Mass Payments',
-    'version': '1.0',
+    'version': '0.0.1',
     'Author': 'AAAAAAAA',
     'category': 'Accounting',
     'summary': 'Manage Mass Payments',
@@ -13,5 +13,4 @@
         'views/mass_payment_wizard_views.xml',
     ],
     'installable': True,
-    'application': True,
 }

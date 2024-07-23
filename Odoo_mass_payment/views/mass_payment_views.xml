@@ -45,5 +45,5 @@
         </field>
     </record>
 
-    <menuitem id="menu_mass_payment" name="Mass Payments" parent="account.menu_finance_payables" action="action_mass_payment"/>
+    <menuitem id="menu_mass_payment" name="Mass Payments" parent="account.menu_action_account_payments_payable" action="action_mass_payment"/>
 </odoo>
