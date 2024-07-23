@@ -13,7 +13,6 @@ class MassPaymentWizard(models.TransientModel):
     payment_method_id = fields.Many2one('account.payment.method', string='Payment Method', required=True)
     mass_payment_id = fields.Many2one('mass.payment', string='Mass Payment')
 
-    @api.multi
     def action_create_payment(self):
         self.ensure_one()
         Payment = self.env['account.payment']
