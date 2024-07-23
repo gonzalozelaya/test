@@ -16,7 +16,6 @@ class MassPayment(models.Model):
     payment_ids = fields.One2many('account.payment', 'mass_payment_id', string='Payments')
     invoice_ids = fields.Many2many('account.move', string='Invoices', domain=[('move_type', 'in', ['out_invoice', 'in_invoice']), ('state', '=', 'posted'), ('invoice_payment_state', '!=', 'paid')])
 
-    @api.multi
     def action_open_payment_wizard(self):
         self.ensure_one()
         return {
@@ -34,7 +33,6 @@ class MassPayment(models.Model):
             }
         }
 
-    @api.multi
     def action_process_payments(self):
         self.ensure_one()
         Payment = self.env['account.payment']
