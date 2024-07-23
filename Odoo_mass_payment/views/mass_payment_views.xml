@@ -1,5 +1,4 @@
 <odoo>
-  <data>
     <record id="view_mass_payment_form" model="ir.ui.view">
         <field name="name">mass.payment.form</field>
         <field name="model">mass.payment</field>
@@ -35,35 +34,16 @@
         </field>
     </record>
 
-    <!-- Vista del wizard mass.payment.wizard -->
-    <record id="view_mass_payment_wizard_form" model="ir.ui.view">
-        <field name="name">mass.payment.wizard.form</field>
-        <field name="model">mass.payment.wizard</field>
-        <field name="arch" type="xml">
-            <form string="Create Payment">
-                <group>
-                    <field name="payment_type" readonly="1"/>
-                    <field name="partner_id"/>
-                    <field name="amount"/>
-                    <field name="currency_id"/>
-                    <field name="payment_date"/>
-                    <field name="journal_id"/>
-                    <field name="payment_method_id"/>
-                </group>
-                <footer>
-                    <button name="action_create_payment" type="object" string="Create Payment" class="btn-primary"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
-                </footer>
-            </form>
+    <record id="action_mass_payment" model="ir.actions.act_window">
+        <field name="name">Mass Payments</field>
+        <field name="res_model">mass.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Mass Payment
+            </p>
         </field>
     </record>
 
-    <!-- Acción de ventana para el wizard -->
-    <record id="action_mass_payment_wizard" model="ir.actions.act_window">
-        <field name="name">Create Payment</field>
-        <field name="res_model">mass.payment.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-    </record>
-  </data>
+    <menuitem id="menu_mass_payment" name="Mass Payments" parent="account.menu_finance_payables" action="action_mass_payment"/>
 </odoo>

@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from . import models
+from . import mass_payment
+from . import mass_payment_wizard
