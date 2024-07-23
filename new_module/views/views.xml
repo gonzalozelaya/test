@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <!-- Vista de formulario para Multi Payment -->
+        <record id="view_multi_payment_form" model="ir.ui.view">
+            <field name="name">multi.payment.form</field>
+            <field name="model">multi.payment</field>
+            <field name="arch" type="xml">
+                <form string="Multiple Payment">
+                    <sheet>
+                        <group>
+                            <field name="date"/>
+                            <field name="partner_id"/>
+                            <field name="journal_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Pending Balances">
+                                <field name="payment_line_ids" context="{'default_multi_payment_id': active_id}">
+                                    <tree editable="bottom">
+                                        <field name="move_line_id"/>
+                                        <field name="amount_due" readonly="1"/>
+                                        <field name="amount_paid"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acción para abrir la vista de formulario -->
+        <record id="action_multi_payment" model="ir.actions.act_window">
+            <field name="name">Multiple Payments</field>
+            <field name="res_model">multi.payment</field>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>
